@@ -87,8 +87,6 @@ git merge dev
 #删除分支
 git branch -d dev
 
-增加一个文件
-
 
 
 
