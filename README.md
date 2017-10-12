@@ -87,6 +87,9 @@ git merge dev
 #删除分支
 git branch -d dev
 
+#查看合并分支图
+git log --graph
+git log --graph --pretty=oneline --abbrev-commit
 
 
 
