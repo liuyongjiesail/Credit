@@ -92,6 +92,6 @@ git log --graph
 git log --graph --pretty=oneline --abbrev-commit
 
 
-
+试着加点东西到暂存区
 
 
