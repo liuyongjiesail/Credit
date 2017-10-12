@@ -91,7 +91,23 @@ git branch -d dev
 git log --graph
 git log --graph --pretty=oneline --abbrev-commit
 
+#注意：如果你目前在一个分支上开发功能，但是临时要在另一个分支上修复bug，但是你在目前的分支上已经做了很多修改而又不想commit（为什么在切换分支的时候一定要commit呢？ 其实不commit，也能切换分支，但是会把工作区的修改一起带过去到切换的分支上，这不是我想要的，所以说一般切换分支都要进行commit，原则就是“切换分支过去，给它一个比较干净纯洁的工作区”），可以用git stash把修改保存在当前分支的存储区，回来的时候再用命令 git stash pop（这个命令进行了两个操作 git stash apply -- 恢复， git stash drop -- 删除） 把存储的内容还原回工作区
 
-试着加点东西到暂存区
+#查看储存区的内容
+git stash list
+
+#把工作去的内容储存起来
+git stash
+
+#恢复内容
+git stash apply
+
+#删除储存区内容
+git stash drop
+
+#恢复并删除
+git stash pop
+
+
 
 
