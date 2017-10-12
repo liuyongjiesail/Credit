@@ -68,4 +68,21 @@ git clone git@github.com:liuyongjiesail/Credit.git
 git clone https://github.com/liuyongjiesail/Credit.git
 
 
+############   分支  ###########
+#创建并切换到dev分支
+git checkout -b dev
+
+#创建分支
+git branch dev
+
+#切换分支
+git checkout dev
+
+#查看所有分支
+git branch
+
+
+
+
+
 
