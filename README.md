@@ -81,6 +81,13 @@ git checkout dev
 #查看所有分支
 git branch
 
+#合并分支
+git merge dev
+
+#删除分支
+git branch -d dev
+
+
 
 
 
