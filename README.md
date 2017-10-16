@@ -60,7 +60,7 @@ git pull origin master
 #合并两个仓库
 git pull origin master --allow-unrelated-histories
 
-#推送到远程仓库
+#推送到远程仓库master
 git push origin master
 
 #克隆一个远程仓库到本地 (ssh协议和http协议)
@@ -107,6 +107,51 @@ git stash drop
 
 #恢复并删除
 git stash pop
+
+
+#************************  标签 ****************************
+
+#打一个标签
+git tag v1.0
+
+#查看所有标签
+git tag
+
+#对某次commit打一个标签
+git tag v0.9 6224937
+
+#查看某次tag
+git show v0.9
+
+#对某次commit打标签，并加说明
+git tag -a v0.1 -m "version 0.1 released" 3628164
+
+#对某次commit打一个标签，并PGP签名标签
+git tag -s v0.2 -m "signed version 0.2 released" fec145a
+
+#删除某个标签
+git tag -d v0.1
+
+#推送某个标签到远程
+git push origin v1.0
+
+#一次性推送全部尚未推送到远程的本地标签
+git push origin --tags
+
+#删除远程标签
+git push origin :refs/tags/v0.9
+
+
+#**************************  实用命令  **************************
+
+#删除远程的某次commit，先回退到某次提交，然后强制推送到远程
+git reset --hard 12345    
+git push --force
+
+#值得注意的是，这类操作比较比较危险，例如：在你的commit 3之后别人又提交了新的commit 4，那在你强制推送之后，那位仁兄的commit 4也跟着一起消失了。
+
+
+
 
 
 
