@@ -150,7 +150,24 @@ git push --force
 
 #值得注意的是，这类操作比较比较危险，例如：在你的commit 3之后别人又提交了新的commit 4，那在你强制推送之后，那位仁兄的commit 4也跟着一起消失了。
 
+#修改最近一次的提交说明
+git commit --amend
 
+#如果远程已经修改,强制提交
+git push -f
+
+#把目前的修改同步提交到上一次commit
+git add .
+git commit --amend
+
+
+
+
+
+
+
+
+#
 
 
 
