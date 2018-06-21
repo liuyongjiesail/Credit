@@ -164,8 +164,26 @@ git push -f
 git add .
 git commit --amend
 
+#把目前分支上的某段 commit 合并到 另一个分支上
+git rebase [startpoint] [endpoint] --onto [branchName]
 
+#将某个commit 合并到 另一个分支，切换到当前分支，找到那个commitId
+git cherry-pick [commidId]
 
+#rebase - i 操作
+git rebase -i [commitid]
 
+#p, pick = use commit
+#r, reword = use commit, but edit the commit message
+#e, edit = use commit, but stop for amending
+#s, squash = use commit, but meld into previous commit
+#f, fixup = like "squash", but discard this commit's log message
+#x, exec = run command (the rest of the line) using shell
+#d, drop = remove commit
 
-
+pick: 保留该commit
+reword: 只修改commit描述，想让哪几个commit改描述，直接在把pick改成reword即可，确定以后按顺序修改描述即可
+edit: 不单单能修改commit描述，还能修改本次提交的内容。添加或者删除都可以，完毕后git commit --amend 后在这里就可以修改描述了，最后git rebase --continue 结束即可
+squash: 合并 使用squash标注的commit 到上一个commit中，并且几个commit 的描述都保留 
+fixup: 合并 使用fixup标注的commit 到上一个commit中，但是不保留几个commit 的描述 
+drop: 删除drop标注的commit
