@@ -45,6 +45,8 @@ git rm test.txt
 #恢复上一步操作
 git checkout -- test.txt
 
+#撤销本地所有修改
+git checkout .
 
 ############   远程关联仓库  ###########
 
@@ -67,6 +69,8 @@ git push origin master
 git clone git@github.com:liuyongjiesail/Credit.git
 git clone https://github.com/liuyongjiesail/Credit.git
 
+#将本地分支与远程分支关联
+git branch --set-upstream-to origin/newName
 
 ############   分支  ###########
 #创建并切换到dev分支
